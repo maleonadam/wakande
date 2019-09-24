@@ -14,7 +14,7 @@
 Route::get('/', 'MealController@index');
 Route::get('/cart', 'MealController@goToCart');
 Route::get('/add-to-cart/{id}', 'MealController@addToCart');
-// Route::get('/remove-from-cart/{meal}', 'MealController@removeFromCart');
+Route::get('/remove-from-cart/{meal}', 'MealController@removeFromCart');
 Route::get('/checkout', 'MealController@goToCheckout');
 Route::post('/checkout', 'MealController@postCheckout');
 Route::get('/thankyou', 'MealController@orderConfirm');

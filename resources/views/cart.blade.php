@@ -5,7 +5,7 @@
     @if(Session::has('cart'))
         <div class="cart-section container">
             <div>
-                <h2>Shopping Cart</h2>
+                <h2><b>Shopping Cart</b></h2>
 
                 <div class="cart-table">
                     @foreach($meals as $meal)
@@ -23,11 +23,11 @@
                                         {{ csrf_field() }}
                                         {{ method_field('DELETE') }}
 
-                                        <div class="dropdown" disabled>
-                                            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" disabled> Remove
+                                        <div class="dropdown">
+                                            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"> Remove
                                             </button>
-                                            <ul class="dropdown-menu" disabled>
-                                                <li><a href="#">Remove 1 Meal</a></li>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="/remove-from-cart/{{$meal['item']['id']}}">Remove 1 Meal</a></li>
                                                 <li><a href="#">Remove All Meals</a></li>
                                             </ul>
                                         </div>

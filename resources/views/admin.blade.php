@@ -9,12 +9,13 @@
                     @foreach ($orders as $order)
                         <div class="panel panel-default">
                             <div class="panel-body">
-                                <h4>Customer: {{$order->user_id}}</h4>
+                                <h4>Customer: {{$order->user->name}}</h4>
+                                <h5>Location: {{$order->address}}</h5>
                                 <ul class="list-group">
                                     @foreach ($order->cart->items as $item)
                                     <li class="list-group-item">
                                         <!-- <span class="badge">Customer:</span> {{$item['item']['name']}} -->
-                                        <span class="badge">Meal:</span> {{$item['item']['meal_name']}} |
+                                        Meal: {{$item['item']['meal_name']}} |
                                         <span class="badge">Units:</span> {{$item['qty']}} |
                                         <span class="badge">Price:</span> {{$item['price']}} ksh
                                     </li>

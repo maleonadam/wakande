@@ -117,7 +117,7 @@ class MealController extends Controller
 
     public function removeFromCart(Request $request, $id)
     {
-    
+        
     }
 
     public function goToCheckout()
@@ -155,11 +155,11 @@ class MealController extends Controller
     // get all user orders
     public function getUserOrders() {
         $orders = Order::all();
-        // $orders = User::all()->orders;
+        $users = User::all();
         $orders -> transform(function($order, $key){
             $order->cart = unserialize($order->cart);
             return $order;
          });
-        return view('admin', ['orders' => $orders]);
+        return view('admin', ['orders' => $orders, 'users']);
     }
 }
